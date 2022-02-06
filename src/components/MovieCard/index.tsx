@@ -1,9 +1,10 @@
+import Image from "next/image";
+import Link from 'next/link';
+
 import styles from "./styles.module.scss";
 import MovieProps from "../../types/moviesProps";
-import Image from "next/image";
 
-
-export default function MovieCard({title, date, poster}:MovieProps) {
+export default function MovieCard({ id, title, date, poster}:MovieProps) {
   return (
     <div className={styles.container}>
       <Image
@@ -14,7 +15,7 @@ export default function MovieCard({title, date, poster}:MovieProps) {
         className={styles.poster}
       />
       <div className={styles.description}>
-        <h1>{title}</h1>
+        <Link href={`/movie/${id}`}>{title}</Link>
         <span>{date}</span>
       </div>
     </div>

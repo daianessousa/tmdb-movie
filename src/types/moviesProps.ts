@@ -1,5 +1,5 @@
 export default interface MovieProps {
-  id?: number; 
+  id: string; 
   title: string; 
   date: string;
   poster: string; 
